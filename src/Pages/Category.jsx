@@ -38,7 +38,7 @@ function Category({ setProduct }) {
         </Link>
       </nav>
       {menu == true ? <HamMenu setMenu={setMenu}></HamMenu> : <Second></Second>}
-      <div>
+      <div className="flex flex-wrap justify-around space-y-3 mt-2">
         {data.map((items) => {
           return (
             <Link
