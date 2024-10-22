@@ -46,7 +46,7 @@ const Admin = ({order}) => {
                       </div>
                       <div className="ml-5 w-0 flex-1">
                         <dl>
-                          <dt className="text-sm font-medium text-gray-500 truncate">{flower.name}</dt>
+                          <dt className="text-sm font-medium text-gray-500 truncate">{flower.product}</dt>
                           <dd className="text-base font-medium text-gray-900">Quantity: {flower.quantity}</dd>
                           <dd className="text-base font-medium text-indigo-600">Total: ${flower.totalPrice}</dd>
                         </dl>
