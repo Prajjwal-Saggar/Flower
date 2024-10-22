@@ -77,7 +77,7 @@ function Home() {
       {/* About Us Section  */}
       <div>
         <div className="w-[100%] border-black border-[1px] h-[121px]  pt-[40px] pb-[40px] pl-[16px] pr-[16px]">
-          <h1 className="font-gilroy font-[600] text-[34px] leading-[40.8px]">
+          <h1 id="about" className="font-gilroy font-[600] text-[34px] leading-[40.8px]">
             About Us
           </h1>
         </div>

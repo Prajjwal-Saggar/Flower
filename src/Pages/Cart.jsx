@@ -6,16 +6,36 @@ import Shopping from "../assets/Shopping.svg";
 import { Link } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa";
 import Carting from "../Components/Carting";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
-function Cart({ item, quantity  , price}) {
+function Cart({ item ,setItem , setPrice, setQuantity, quantity  , price  , order}) {
+
+  const handleOrder = () => {
+    if (item.length > 0) {
+      setItem([]);
+      setPrice([]);
+      setQuantity(0);
+      toast.success("Order Placed 😊");
+    } else {
+      toast.error("Your cart is empty!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
+  };
 
   function totalCost(){
    let total = 0
    for(let i = 0 ; i<price.length ; i++){
     total += price[i];
    }
-     console.log(price);
+     
    return total;
   }
 
@@ -87,8 +107,16 @@ function Cart({ item, quantity  , price}) {
               </div>
             </div>
           </div>
+          {
+            item.length > 0 && (  <button onClick={handleOrder} className="w-full mt-6 py-2 bg-black text-white font-gilroy font-[500] hover:bg-white hover:text-black border border-black transition-colors duration-300">
+              Place Order
+            </button>)
+             
+            
+          }
         </div>
       )}
+      <ToastContainer/>
     </div>
   );
 }

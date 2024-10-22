@@ -27,9 +27,19 @@ function Menu(props) {
      Contact
    </div>
    </a>
-   <div className="w-full h-[70px] border-black border-b-[1px]  text-[25px] text-black   font-gilroy font-[500] p-[24px] leading-[21.6px]">
+   
+   <a href='#about'>
+   <div onClick={()=>{props.setMenu(false)}} className="w-full h-[70px] border-black border-b-[1px]  text-[25px] text-black   font-gilroy font-[500] p-[24px] leading-[21.6px]">
      About Us
    </div>
+   </a>
+
+   <Link to="/Auth/Admin">
+   <div className="w-full h-[70px] border-black border-b-[1px]  text-[25px] text-black   font-gilroy font-[500] p-[24px] leading-[21.6px]">
+     Admin
+   </div>
+   </Link>
+
    <div className="w-full h-[131px] p-[24px] border-black border-b-[1px] text-[16.5px] flex flex-col justify-around font-[500] font-gilroy ">
      <div>Shipping & returns</div>
      <div>Terms & conditions</div>

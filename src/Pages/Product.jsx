@@ -12,7 +12,7 @@ import ContactUs from "../Components/ContactUs";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function Product({ product, quantity , setQuantity , item ,price  , setPrice }) {
+function Product({ product, quantity , setQuantity , item ,price ,order , setPrice }) {
   const [menu, setMenu] = useState(false);
   function hamburgerHandler() {
     setMenu((prev) => !prev);
@@ -88,6 +88,12 @@ function Product({ product, quantity , setQuantity , item ,price  , setPrice }) 
             if(count!=0){
               item.push(data[product]);
               price.push((data[product].price)*count);
+              order.push({
+                product: data[product].name,
+                quantity: count,
+                totalPrice: (data[product].price) * count,
+                image:data[product].image
+              });
               setQuantity(count);
             }
              
